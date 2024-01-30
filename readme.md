@@ -102,7 +102,7 @@ Hier beispielhaft für die Männer in der 3. äußeren Schleife*
 
 ## Erkenntnisse
 
-* Psychologische Variablen wurden seltener ausgewählt und hatten einen Einfluss auf die Lebenszeit.
+* Psychologische Variablen wurden seltener ausgewählt und hatten einen geringeren Einfluss auf die Lebenszeit.
    * Interessant ist, dass scheinbar positive Konstrukte wie Lebenszufriedenheit oder Altruismus offenbar Risikofaktoren darstellen.
    * Männer und Frauen unterscheiden sich in den relevanten Risikofaktoren.<br/>
    Für Frauen spielen offenbar Beziehungsbezogene Variablen eine größere Rolle als für Männer (z.B. Hilfe für Familie), während bei Männern eher selbstbezogene Variablen relevant sind (z.B. Lebenszufriedenheit)
