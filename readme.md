@@ -1,12 +1,12 @@
 # Überlebenszeitanalyse des MIDUS Datensatzes
 
-* [Studienbeschreibung](studienbeschreibung-und-plakat)
+* [Studienbeschreibung](#studienbeschreibung-und-plakat)
 
-* [Wichtige Konzepte erklärt](_include/concepts.md)
+* [Wichtige Konzepte erklärt](concepts.md)
 
-* [Zusatzmaterial](_include/supplementary.md)
+* [Zusatzmaterial](supplementary.md)
 
-* [Referenzen und Literatur](_include/refernces.md)
+* [Referenzen und Literatur](refernces.md)
 
 * [Kontakt](#kontakt)
 
@@ -19,19 +19,19 @@ Herzlichen Dank an Kristin Jankowsky und Prof. Ulrich Schroeders für wichtige W
 
 Unser Forschungsziel war es, die Einflüsse von psychologischen Faktoren auf die Lebensdauer zu untersuchen und mit anderen Einflüssen zu vergleichen. Dafür setzten wir die Methode der [Überlebenszeitanalyse](concepts.md#überlebenszeitanalyse) ein, konkret in Form einer [Cox-Regression](concepts.md#cox-regression--cox-proportional-hazards-modell). Dieses Verfahren ermöglichte es uns, alle verfügbaren Daten effektiv zu nutzen – auch wenn etwa zwei Drittel unserer Beobachtungen noch kein Todesereignis aufwiesen.
 
-1. [Datensatz](datensatz)
-   1. [Vorauswahl der Variablen](vorauswahl-der-variablen)
-   1. [Elastic Net Regularisierung](elastic-net-regularisierung)
-1. [Modellvalidierung](modellvalidierung)
-   1. [Robustheit der Prädiktorauswahl](robustheit-der-prädiktorauswahl)
-   1. [Feature Selection: E-Net vs. Forward Selection](feature-selection-elastic-net-vs-forward-slection)
-1. [Erkenntnisse](erkenntnisse)
+1. [Datensatz](#datensatz)
+   1. [Vorauswahl der Variablen](#vorauswahl-der-variablen)
+   1. [Elastic Net Regularisierung](#elastic-net-regularisierung)
+1. [Modellvalidierung](#modellvalidierung)
+   1. [Robustheit der Prädiktorauswahl](#robustheit-der-prädiktorauswahl)
+   1. [Feature Selection: E-Net vs. Forward Selection](#feature-selection-elastic-net-vs-forward-slection)
+1. [Erkenntnisse](#erkenntnisse)
 1. [Stärken](#stärken)
-1. [Limitationen](limitationen)
+1. [Limitationen](#limitationen)
 
 ## Datensatz
 
-Über die Daten der ersten Welle aus dem [MIDUS-Projekt](_include/https://midus.wisc.edu/) standen uns 2098 Variablen von 7108 Beobachtungen zur Verfügung. Für jede Beobachtung liegt bis 2023 zusätzlich die Information vor ob und wann die befragte Person gestorben ist. 
+Über die Daten der ersten Welle aus dem [MIDUS-Projekt](https://midus.wisc.edu/) standen uns 2098 Variablen von 7108 Beobachtungen zur Verfügung. Für jede Beobachtung liegt bis 2023 zusätzlich die Information vor ob und wann die befragte Person gestorben ist. 
 Von den Beobachtungen mussten 3 ausgeschlossen werden, weil eine Angabe zum Geburtsjahr fehlte (n = 7105).
 
 ![Beschreibende Statistik zur Zeit bis zum Ereignis](_include/descriptive_plots_time-to-event.png)
@@ -98,7 +98,7 @@ Unsere Tests zeigen keinen nennenswerten Unterschied zwischen den beiden Verfahr
 ![Brier-Scores für Elastic Net und Forward Selection im Vergleich](_include/brier_score_males_l1.png)
 
 *cox.fw = Forward Selection<br/>
-cox.1se = Elastic Net mit λ nach [1-SE-Regel](elastic-net-regularisierung) ausgewählt<br/>
+cox.1se = Elastic Net mit λ nach [1-SE-Regel](#elastic-net-regularisierung) ausgewählt<br/>
 Hier beispielhaft für die Männer in der 3. äußeren Schleife*
 
 

@@ -1,21 +1,21 @@
 # Erläuterung relevanter Konzepte
 
-1. [Überlebenszeitanalyse](Überlebenszeitanalyse)
-   1. [Cox-Regression](cox-regression--cox-proportional-hazards-modell)
-   1. [Zensierte Daten / Zensierung](zensierte-daten)
-   1. [Kaplan-Meier-Schätzer](kaplan-meier-schätzer)
-   1. [Gefährdungsrate / Hazard-Rate](gefährdungsrate--hazard-rate)
-1. [Gütemaße](gütemaße)
-   1. [Brier-Score](Brier-Score)
-   1. [Concordance-Index (C-Index)](C-Index)
-   1. [Log-Rank-Test](log-rank-test)
-1. [Sonstige Konzepte](sonstige-konzepte)
-   1. [Imputation durch Predictive Mean Matching](predictive-mean-matching-imputation)
+1. [Überlebenszeitanalyse](#Überlebenszeitanalyse)
+   1. [Cox-Regression](#cox-regression--cox-proportional-hazards-modell)
+   1. [Zensierte Daten / Zensierung](#zensierte-daten)
+   1. [Kaplan-Meier-Schätzer](#kaplan-meier-schätzer)
+   1. [Gefährdungsrate / Hazard-Rate](#gefährdungsrate--hazard-rate)
+1. [Gütemaße](#gütemaße)
+   1. [Brier-Score](#Brier-Score)
+   1. [Concordance-Index (C-Index)](#C-Index)
+   1. [Log-Rank-Test](#log-rank-test)
+1. [Sonstige Konzepte](#sonstige-konzepte)
+   1. [Imputation durch Predictive Mean Matching](#predictive-mean-matching-imputation)
 
 ## Überlebenszeitanalyse
 
 Eine Überlebenszeitanalyse ist ein statistisches Verfahren, das darauf abzielt, die Zeit bis zum Eintritt eines bestimmten Ereignisses zu untersuchen. In unserem Fall der Eintritt des Todes. Im Gegensatz zu herkömmlichen Verfahren, die oft auf binären Outcomes (Ereignis eingetreten/nicht eingetreten) basieren, berücksichtigt die Überlebenszeitanalyse explizit den Zeitfaktor bis zum Eintritt des Ereignisses.
-Ein Schlüsselmerkmal der Überlebenszeitanalyse ist der Umgang mit sogenannten [zensierten Daten](zensierte-daten). Zensierung tritt auf, wenn die Beobachtung eines Ereignisses zum Ende der Studie hin noch nicht eingetreten ist oder aus anderen Gründen nicht vollständig beobachtet werden konnte. Die Überlebenszeitanalyse ermöglicht es uns, solche unvollständigen Informationen sinnvoll zu nutzen, ohne sie einfach aus der Analyse auszuschließen.
+Ein Schlüsselmerkmal der Überlebenszeitanalyse ist der Umgang mit sogenannten [zensierten Daten](#zensierte-daten). Zensierung tritt auf, wenn die Beobachtung eines Ereignisses zum Ende der Studie hin noch nicht eingetreten ist oder aus anderen Gründen nicht vollständig beobachtet werden konnte. Die Überlebenszeitanalyse ermöglicht es uns, solche unvollständigen Informationen sinnvoll zu nutzen, ohne sie einfach aus der Analyse auszuschließen.
 
 ### Cox-Regression / Cox-Proportional-Hazards-Modell
 
@@ -35,7 +35,7 @@ Die Berücksichtigung zensierter Daten ist aus mehreren Gründen wichtig:
 - **Verzerrung vermeiden:** Würde man nur die Ereignisse berücksichtigen und zensierte Fälle ignorieren, würde das zu einer systematischen Verzerrung der Ergebnisse führen. Die Schätzungen würden die Überlebenszeit unterschätzen, da man fälschlicherweise annimmt, dass alle nicht beobachteten Ereignisse eine kürzere Überlebenszeit haben.
 - **Statistische Effizienz:** Das Ausschließen zensierter Daten führt zum Verlust von Informationen und damit zu einer geringeren statistischen Effizienz. Die verfügbaren Daten werden nicht vollständig genutzt, was zu weniger präzisen Schätzungen führt.
 
-Die normale lineare Regression oder andere Regressionsmodelle sind für die Analyse von Überlebenszeiten nicht geeignet, da sie die Zensierung nicht berücksichtigen. Sie setzen voraus, dass für alle Beobachtungen vollständige Informationen vorliegen. Überlebenszeitanalysen, wie die [Cox-Regression](cox-regression), sind speziell dafür entwickelt worden, um mit zensierten Daten umzugehen und die Wahrscheinlichkeit des Eintretens eines Ereignisses über die Zeit zu modellieren. Sie erlauben es, die Daten aller Teilnehmer zu nutzen, sowohl derjenigen, bei denen das Ereignis eingetreten ist, als auch derjenigen, bei denen es nicht eingetreten ist. Dadurch erhält man eine genauere und weniger verzerrte Schätzung der Überlebensfunktion und des Einflusses von Kovariaten auf die Überlebenszeit.
+Die normale lineare Regression oder andere Regressionsmodelle sind für die Analyse von Überlebenszeiten nicht geeignet, da sie die Zensierung nicht berücksichtigen. Sie setzen voraus, dass für alle Beobachtungen vollständige Informationen vorliegen. Überlebenszeitanalysen, wie die [Cox-Regression](#cox-regression), sind speziell dafür entwickelt worden, um mit zensierten Daten umzugehen und die Wahrscheinlichkeit des Eintretens eines Ereignisses über die Zeit zu modellieren. Sie erlauben es, die Daten aller Teilnehmer zu nutzen, sowohl derjenigen, bei denen das Ereignis eingetreten ist, als auch derjenigen, bei denen es nicht eingetreten ist. Dadurch erhält man eine genauere und weniger verzerrte Schätzung der Überlebensfunktion und des Einflusses von Kovariaten auf die Überlebenszeit.
 
 ### Kaplan-Meier-Schätzer
 Der Kaplan-Meier-Schätzer ist eine statistische Methode, die in der Überlebenszeitanalyse verwendet wird, um die Wahrscheinlichkeit des Überlebens über die Zeit zu schätzen. Diese Methode ist besonders nützlich, wenn die Überlebensdaten zensiert sind, d.h., wenn für einige Studienteilnehmer das interessierende Ereignis (wie Tod oder Rückfall) am Ende der Beobachtungsperiode noch nicht eingetreten ist.
@@ -77,7 +77,7 @@ Die Hazard-Rate kann folgendermaßen verstanden werden:
 - Die Hazard-Rate ist nicht direkt beobachtbar, sondern wird üblicherweise durch statistische Modelle geschätzt.
 - Sie kann im Zeitverlauf konstant, steigend, fallend oder auf andere Weise variabel sein, je nach den Eigenschaften der Daten und des untersuchten Phänomens.
 
-In der Praxis wird die Hazard-Rate oft mit Hilfe von Modellen wie dem [Cox-Proportional-Hazards-Modell](cox-regression--cox-proportional-hazards-modell) analysiert, welches die Beziehung zwischen der Hazard-Rate und einer oder mehreren unabhängigen Variablen (wie Alter, Geschlecht, Behandlungsmethoden) untersucht.
+In der Praxis wird die Hazard-Rate oft mit Hilfe von Modellen wie dem [Cox-Proportional-Hazards-Modell](#cox-regression--cox-proportional-hazards-modell) analysiert, welches die Beziehung zwischen der Hazard-Rate und einer oder mehreren unabhängigen Variablen (wie Alter, Geschlecht, Behandlungsmethoden) untersucht.
 
 Ein wichtiger Aspekt der Hazard-Rate ist, dass sie anders als die Wahrscheinlichkeit des Überlebens interpretiert wird. Während die Überlebensfunktion die Wahrscheinlichkeit angibt, bis zu einem bestimmten Zeitpunkt zu überleben, beschreibt die Hazard-Rate die Intensität oder das Risiko eines Ereignisses zum gleichen Zeitpunkt.
 
