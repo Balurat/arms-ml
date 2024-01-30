@@ -2,11 +2,11 @@
 
 * [Projektbeschreibung](#projektbeschreibung)
 
-* [Wichtige Konzepte erklärt](#concepts.md)
+* [Wichtige Konzepte erklärt](concepts.md)
 
-* [Zusatzmaterial](#supplementary.md)
+* [Zusatzmaterial](supplementary.md)
 
-* [Referenzen und Literatur](#refernces.md)
+* [Referenzen und Literatur](refernces.md)
 
 * [Kontakt](#kontakt)
 
