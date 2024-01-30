@@ -6,7 +6,7 @@
 
 * [Zusatzmaterial](supplementary.md)
 
-* [Referenzen und Literatur](refernces.md)
+* [Referenzen und Literatur](references.md)
 
 * [Kontakt](#kontakt)
 
