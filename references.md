@@ -6,10 +6,10 @@
 
 # Literatur
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cox, D. R. (1972). Regression Models and Life-Tables. Journal of the Royal Statistical Society. 34(2), 187–220.  
+Cox, D. R. (1972). Regression Models and Life-Tables. Journal of the Royal Statistical Society. 34(2), 187–220.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Radler B. T. (2014). The Midlife in the United States (MIDUS) Series: A National Longitudinal Study of Health and Well-being. Open health data, 2(1), e3
+Radler B. T. (2014). The Midlife in the United States (MIDUS) Series: A National Longitudinal Study of Health and Well-being. Open health data, 2(1), e3
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tay, K., Simon, N., Friedman, J. Hastie, T. Tibshirani, R., & Narasimhan, B. (2023). Regularized Cox Regression. https://cran.r-project.org/web/packages/glmnet/vignettes/Coxnet.pdf  
+Tay, K., Simon, N., Friedman, J. Hastie, T. Tibshirani, R., & Narasimhan, B. (2023). Regularized Cox Regression. https://cran.r-project.org/web/packages/glmnet/vignettes/Coxnet.pdf  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schreiber-Gregory, D. (2018). Regulation Techniques for Multicollinearity: Lasso, Ridge, and Elastic Nets. https://www.lexjansen.com/wuss/2018/131_Final_Paper_PDF.pdf
+Schreiber-Gregory, D. (2018). Regulation Techniques for Multicollinearity: Lasso, Ridge, and Elastic Nets. https://www.lexjansen.com/wuss/2018/131_Final_Paper_PDF.pdf
