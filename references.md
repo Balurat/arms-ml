@@ -8,7 +8,7 @@
 
 Cox, D. R. (1972). Regression Models and Life-Tables. Journal of the Royal Statistical Society. 34(2), 187–220.  
 
-Radler B. T. (2014). The Midlife in the United States (MIDUS) Series: A National Longitudinal Study of Health and Well-being. Open health data, 2(1), e3  
+Radler B. T. (2014). The Midlife in the United States (MIDUS) Series: A National Longitudinal Study of Health and Well-being. Open health data, 2(1), e3
 
 Tay, K., Simon, N., Friedman, J. Hastie, T. Tibshirani, R., & Narasimhan, B. (2023). Regularized Cox Regression. https://cran.r-project.org/web/packages/glmnet/vignettes/Coxnet.pdf  
 
