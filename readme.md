@@ -1,6 +1,6 @@
 # Überlebenszeitanalyse des MIDUS Datensatzes
 
-* [Studienbeschreibung](#studienbeschreibung-und-plakat)
+* [Projektbeschreibung](#projektbeschreibung)
 
 * [Wichtige Konzepte erklärt](concepts.md)
 
@@ -12,10 +12,7 @@
 
 [![Plakat](_include/poster.png)<br/>Plakat herunterladen](_include/poster.pdf)
 
-#### Danksagung
-Herzlichen Dank an Kristin Jankowsky und Prof. Ulrich Schroeders für wichtige Wegweiser, Inspiration sowie die Betreuung dieses Projekts.
-
-# Studienbeschreibung
+# Projektbeschreibung
 
 Unser Forschungsziel war es, die Einflüsse von psychologischen Faktoren auf die Lebensdauer zu untersuchen und mit anderen Einflüssen zu vergleichen. Dafür setzten wir die Methode der [Überlebenszeitanalyse](concepts.md#überlebenszeitanalyse) ein, konkret in Form einer [Cox-Regression](concepts.md#cox-regression--cox-proportional-hazards-modell). Dieses Verfahren ermöglichte es uns, alle verfügbaren Daten effektiv zu nutzen – auch wenn etwa zwei Drittel unserer Beobachtungen noch kein Todesereignis aufwiesen.
 
@@ -85,7 +82,7 @@ Es fiel uns auf, dass sich die spezifische Prädiktorenauswahl zwischen den Mode
 
 [![Prädiktorvergleich über die äußeren KV-Schleifen der Männer](_include/males_forestplot_preview.png)](_include/_forestplot_males.pdf) [![Prädiktorvergleich über die äußeren KV-Schleifen der Frauen](_include/females_forestplot_preview.png)](_include/_forestplot_females.pdf)
 
-*für die Detailansicht die Grafik anklicken*<br/>
+*Für eine Detailansicht die Grafik anklicken.*<br/>
 *Die Plots zeigen nur Prädiktoren, die in mindestens einem der 5 Modelle ein signifikant von 0 verschiedenes Gewicht aufwiesen.*
 
 
@@ -97,6 +94,7 @@ Unsere Tests zeigen keinen nennenswerten Unterschied zwischen den beiden Verfahr
 
 ![Brier-Scores für Elastic Net und Forward Selection im Vergleich](_include/brier_score_males_l1.png)
 
+*[Brier-Scores](concepts.md#brier-score) für Trainings- und Testdatensatz*<br/>
 *cox.fw = Forward Selection<br/>
 cox.1se = Elastic Net mit λ nach [1-SE-Regel](#elastic-net-regularisierung) ausgewählt<br/>
 Hier beispielhaft für die Männer in der 3. äußeren Schleife*
@@ -134,3 +132,6 @@ Hier beispielhaft für die Männer in der 3. äußeren Schleife*
 ### Betreuung
 * Prof. Dr. Ulrich Schroeders<br/>
 https://www.uni-kassel.de/fb01/institute/institut-fuer-psychologie/fachgebiete/psychologische-diagnostik/prof-dr-ulrich-schroeders
+
+#### Danksagung
+Herzlichen Dank an Kristin Jankowsky und Prof. Ulrich Schroeders für wichtige Wegweiser, Inspiration sowie die Betreuung dieses Projekts.
