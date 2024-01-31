@@ -8,7 +8,6 @@
 1. [Gütemaße](#gütemaße)
    1. [Brier-Score](#Brier-Score)
    1. [Concordance-Index (C-Index)](#C-Index)
-   1. [Log-Rank-Test](#log-rank-test)
 1. [Sonstige Konzepte](#sonstige-konzepte)
    1. [Imputation durch Predictive Mean Matching](#predictive-mean-matching-imputation)
 
@@ -38,7 +37,7 @@ Die Berücksichtigung zensierter Daten ist aus mehreren Gründen wichtig:
 Die normale lineare Regression oder andere Regressionsmodelle sind für die Analyse von Überlebenszeiten nicht geeignet, da sie die Zensierung nicht berücksichtigen. Sie setzen voraus, dass für alle Beobachtungen vollständige Informationen vorliegen. Überlebenszeitanalysen, wie die [Cox-Regression](#cox-regression), sind speziell dafür entwickelt worden, um mit zensierten Daten umzugehen und die Wahrscheinlichkeit des Eintretens eines Ereignisses über die Zeit zu modellieren. Sie erlauben es, die Daten aller Teilnehmer zu nutzen, sowohl derjenigen, bei denen das Ereignis eingetreten ist, als auch derjenigen, bei denen es nicht eingetreten ist. Dadurch erhält man eine genauere und weniger verzerrte Schätzung der Überlebensfunktion und des Einflusses von Kovariaten auf die Überlebenszeit.
 
 ### Kaplan-Meier-Schätzer
-Der Kaplan-Meier-Schätzer ist eine statistische Methode, die in der Überlebenszeitanalyse verwendet wird, um die Wahrscheinlichkeit des Überlebens über die Zeit zu schätzen. Diese Methode ist besonders nützlich, wenn die Überlebensdaten zensiert sind, d.h., wenn für einige Studienteilnehmer das interessierende Ereignis (wie Tod oder Rückfall) am Ende der Beobachtungsperiode noch nicht eingetreten ist.
+Der Kaplan-Meier-Schätzer ist eine statistische Methode, die in der Überlebenszeitanalyse verwendet wird, um die Wahrscheinlichkeit des Überlebens über die Zeit zu schätzen. Diese Methode ist besonders nützlich, wenn die Überlebensdaten [zensiert](#zensierte-daten) sind.
 
 #### Grundprinzipien
 
@@ -133,26 +132,11 @@ Der C-Index ist besonders nützlich für die Bewertung der Anpassungsgüte von �
 
 Zusammengefasst ist der C-Index ein robustes und aussagekräftiges Maß für die Qualität eines Überlebenszeitmodells und wird daher oft herangezogen, um die Güte verschiedener Modelle zu vergleichen und das optimale Modell für die Prognose auszuwählen.
 
-### Log-Rank-Test
-Der Log-Rank-Test ist ein statistisches Verfahren, das in der Überlebenszeitanalyse eingesetzt wird, um zu überprüfen, ob es signifikante Unterschiede in den Überlebenszeiten zwischen zwei oder mehr Gruppen gibt. Er wird häufig verwendet, um die Wirksamkeit von Behandlungen in klinischen Studien oder den Einfluss von Risikofaktoren in epidemiologischen Studien zu bewerten.
-
-Grundprinzipien des Log-Rank-Tests:
-
-- **Vergleich von Überlebenskurven:** Der Log-Rank-Test vergleicht die Überlebenskurven verschiedener Gruppen, die durch Methoden wie den Kaplan-Meier-Schätzer ermittelt wurden.
-
-- **Annahme:** Der Test basiert auf der Annahme, dass die Hazard-Raten in den verglichenen Gruppen über die Zeit proportional sind, was bedeutet, dass die Unterschiede zwischen den Gruppen im Hinblick auf das Risiko eines Ereignisses (z.B. Tod) über die Zeit konstant bleiben.
-
-- **Berechnung:** Der Test berechnet die beobachteten und erwarteten Ereignisanzahlen in jeder Gruppe zu jedem Zeitpunkt, an dem ein Ereignis auftritt, und vergleicht diese über alle Ereigniszeiten. Die Teststatistik folgt unter der Nullhypothese (kein Unterschied zwischen den Gruppen) einer Chi-Quadrat-Verteilung.
-
-- **Nullhypothese:** Die Nullhypothese des Log-Rank-Tests besagt, dass es keinen Unterschied in den Überlebenszeiten zwischen den Gruppen gibt. Ein signifikantes Testergebnis (typischerweise p < 0,05) deutet darauf hin, dass mindestens eine Gruppe eine andere Überlebenszeit als die anderen Gruppen aufweist.
-
-Der Log-Rank-Test ist besonders nützlich, da er zensierte Daten berücksichtigt und somit in vielen realen Studienszenarien anwendbar ist, in denen nicht alle Teilnehmer ein Ereignis erleben oder die Studie vorzeitig verlassen. Dadurch ist er ein wesentliches Werkzeug in der medizinischen Forschung und anderen Bereichen, in denen die Überlebenszeitanalyse relevant ist.
-
 # Sonstige Konzepte
 
 ## Predictive Mean Matching Imputation
 
-Predictive Mean Matching (PMM) ist ein Verfahren zur Imputation fehlender Daten, das besonders in statistischen Analysen angewandt wird. Es ist ein nichtparametrisches Imputationsverfahren, das eine sinnvolle Ergänzung fehlender Werte ermöglicht, ohne dabei auf starke Verteilungsannahmen angewiesen zu sein.
+Predictive Mean Matching (PMM) ist ein nichtparametrisches Verfahren zur Imputation fehlender Daten, ohne dabei auf starke Verteilungsannahmen angewiesen zu sein.
 
 Bei PMM wird für jeden Fall mit fehlenden Daten zunächst ein vorläufiger Imputationswert basierend auf einem Regressionsmodell berechnet. Dieser Wert dient als Grundlage, um eine Reihe von "Spenderfällen" zu identifizieren – das sind Fälle aus dem Datensatz, die keine fehlenden Werte aufweisen und deren vorhergesagte Werte dem vorläufig imputierten Wert ähnlich sind. Anschließend wird aus diesen Spenderfällen zufällig ein Wert ausgewählt und als Imputation für den fehlenden Wert verwendet.
 

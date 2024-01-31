@@ -28,18 +28,18 @@ Unser Forschungsziel war es, die Einflüsse von psychologischen Faktoren auf die
 
 ## Datensatz
 
-Über die Daten der ersten Welle aus dem [MIDUS-Projekt](https://midus.wisc.edu/) standen uns 2098 Variablen von 7108 Beobachtungen zur Verfügung. Für jede Beobachtung liegt bis 2023 zusätzlich die Information vor, ob und wann die befragte Person gestorben ist. 
+Über die Daten der ersten Welle aus dem [MIDUS-Projekt](https://midus.wisc.edu/) standen uns 2098 Variablen von 7108 Beobachtungen zur Verfügung. Für jede Beobachtung liegt bis 2023 zusätzlich die Information vor ob und wann die befragte Person gestorben ist. 
 Von den Beobachtungen mussten 3 ausgeschlossen werden, weil eine Angabe zum Geburtsjahr fehlte (n = 7105).
 
 ![Beschreibende Statistik zur Zeit bis zum Ereignis](_include/descriptive_plots_time-to-event.png)
 
-In unseren ersten Analysen zeigte sich das Geschlecht konstant als starker Prädiktor und bestätigte damit die zahlreichen Vorbefunde, dass Männer im Schnitt kürzer leben als Frauen. Das brachte uns auf die Idee, separate Modelle für Männer und Frauen zu schätzen, um tiefere Einblicke in die geschlechtsspezifischen Unterschiede zu gewinnen.
+In unseren ersten Analysen zeigte sich das Geschlecht konstant als starker Prädiktor und bestätigte damit die zahllosen Vorbefunde, dass Männer im Schnitt kürzer leben als Frauen. Das brachte uns auf die Idee separate Modelle für Männer und Frauen zu schätzen, um tiefere Einblicke in die geschlechtsspezifischen Unterschiede zu gewinnen.
 
-Die methodische Herangehensweise umfasste sowohl äußere als auch innere Kreuzvalidierungsschleifen. Dadurch mussten wir nach dem annährend 50/50 Split für die Geschlechter noch zwei weitere Aufteilungen der Daten in 70/30 Splits vornehmen. Infolgedessen basierten unsere Schätzungen jeweils auf 500 bis 600 eingetretenen Ereignissen. Um ein ausgewogenes Verhältnis zwischen der Anzahl der Prädiktoren und der beobachteten Ereignisse zu gewährleisten, reduzierten wir die ursprünglich über 2000 Variablen erheblich.
+Die methodische Herangehensweise umfasste sowohl äußere als auch innere Kreuzvalidierungsschleifen. Dadurch mussten wir nach dem etwa 50/50 Split für die Geschlechter noch zwei weitere Aufteilungen der Daten in 70/30 Splits vornehmen. Infolgedessen basierten unsere Schätzungen jeweils auf 500 bis 600 Ereignissen. Um ein ausgewogenes Verhältnis zwischen der Anzahl der Prädiktoren und der beobachteten Ereignisse zu gewährleisten, reduzierten wir die ursprünglich über 2000 Variablen erheblich.
 
 [![Analysedesign](_include/survival-analysis_midus_design.png)](_include/survival-analysis_midus_design.png)
 
-*Aufgrund des Designs stehen zur Schätzung der eigentlichen Modelle nur noch rund 500 bis 600 eingetretene Ereignisse zur Verfügung. Das Verhältnis von Prädiktoren zu Ereignissen sollte nicht über 1:10 liegen.*
+*Aufgrund des Designs stehen zur Schätzung der eigentlichen Modelle nur noch rund 500 bis 600 Ereignisse zur Verfügung. Das Verhältnis von Prädiktoren zu Ereignissen sollte nicht über 1:10 liegen.*
 
 ### Vorauswahl der Variablen
 
@@ -53,7 +53,7 @@ Für die Männer wurden so 31 und für die Frauen 52 aus 182 Prädiktoren ausgew
 ![Lambda Tuning für die Männer im 3. Loop](_include/lambda_tuning_males_loop-3.png)
 *__Lambda Tuning für die 3. äußere Schleife der Männer.__<br/>
 Der linke Plot illustriert die Verschiebung der Gewichte abhängig von Log(Lambda), wobei mit größerem Lambda mehr und mehr Variablen auf null gedrückt werden.*<br/>
-*Der rechte Plott zeigt die Modell-Anpassungsgüte anhand des [C-Index](concepts.md#c-index) abhängig von Log(Lambda). Statt dem Wert mit dem kleinsten Kreuzvalidierungsfehler (linke vertikale gestrichelte Linie), wird der Wert um einen Standardfehler verschoben gewählt (1-SE-Regel), um ein etwas sparsameres Modell zu erhalten und die Gefahr für Overfitting zu verringern.*
+*Der rechte Plott zeigt die Modell-Anpassungsgüte anhand des [C-Index](concepts.md#c-index) abhängig von Log(Lambda). Statt dem Wert mit dem kleinsten Kreuzvalidierungsfehler (linke vertikale gestrichelte Linie), wird der Wert um einen Standardfehler verschoben gewählt (1-SE-Regel), um ein etwas sparsameres Modell zu erhalten und die Gefahr für Overfit zu verringern.*
 
 Auf diese Weise haben wir gleichzeitig die Gefahr für Multikollinearität reduziert, da die Elastic-Net-Regularisierung einen Großteil der Variablen ausschließt und sich eher für eine von hochkorrelierten Variablen entscheidet (Schreiber-Gregory, 2018).
 
@@ -86,7 +86,7 @@ Es fiel uns auf, dass sich die spezifische Prädiktorenauswahl zwischen den Mode
 *Die Plots zeigen nur Prädiktoren, die in mindestens einem der 5 Modelle ein signifikant von 0 verschiedenes Gewicht aufwiesen.*
 
 
-### Feature-Selection: Elastic Net vs. Forward Slection
+### Feature-Selection: Elastic Net vs. Forward Selection
 
 Für jede innere Schleife haben wir zwei Auswahlverfahren für die Prädiktoren verglichen. Zum einen die Auswahl per Elastic Net und zum anderen die Auswahl durch Forward Selection. Letztere Methode fügt nach und nach, der Variable Importance folgend, Prädiktoren in das Modell ein und prüft ob sich der Modellfit verbessert. 
 
@@ -97,13 +97,13 @@ Unsere Tests zeigen keinen nennenswerten Unterschied zwischen den beiden Verfahr
 *[Brier-Scores](concepts.md#brier-score) für Trainings- und Testdatensatz*<br/>
 *cox.fw = Forward Selection<br/>
 cox.1se = Elastic Net mit λ nach [1-SE-Regel](#elastic-net-regularisierung) ausgewählt<br/>
-Hier beispielhaft für die Männer in der 3. äußeren Schleife*
+Hier beispielhaft für die Männer in der 1. äußeren Schleife*
 
 
 ## Erkenntnisse
 
-* Psychologische Variablen wurden seltener ausgewählt und hatten einen geringeren Einfluss auf die Lebenszeit.
-   * Interessant ist, dass scheinbar positive Konstrukte wie Lebenszufriedenheit oder Altruismus offenbar Risikofaktoren darstellen.
+* Psychologische Variablen wurden kaum ausgewählt und hatten wenig Einfluss.
+   * Interessant ist, dass erstmal positive Konstrukte wie Lebenszufriedenheit oder Altruismus offenbar Risikofaktoren darstellen.
    * Männer und Frauen unterscheiden sich in den relevanten Risikofaktoren.<br/>
    Für Frauen spielen offenbar Beziehungsbezogene Variablen eine größere Rolle als für Männer (z.B. Hilfe für Familie), während bei Männern eher selbstbezogene Variablen relevant sind (z.B. Lebenszufriedenheit)
 
