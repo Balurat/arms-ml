@@ -120,6 +120,7 @@ Hier beispielhaft für die Männer in der 1. äußeren Schleife*
 
 * Psychologische Variablen im Datensatz begrenzen sich auf Persönlichkeitsmerkmale und viele "fuzzy" Konstrukte wie Lebenszufriedenheit
    * Pathologische Variablen wie Depressivität oder Suizidalität würden möglicherweise bedeutendere Informationen liefern
+* Über die Cox-Regression wird die Annahme gemacht, dass sich die Risiken proportional verhalten, also die Risikobeziehungen konstant sind. Diese Annahme sollte am Datensatz geprüft werden.
 * Die Güte der Modelle könnte wahrscheinlich etwas verbessert werden, indem man multiple Imputation und mehr Kreuzvalidierungsschleifen verwendet. Außerdem könnte Alpha ebenfalls optimiert werden.
 * Insgesamt lässt sich die Überlebenswahrscheinlichkeit nicht sehr präzise anhand des Datensatzes schätzen
 * Bei der Entscheidung welche Variablen redundante Informationen enthalten könnte man auch stärker anhand von Kovarianzen vorgehen. Prinzipiell sollte hier aber die Elastic-Net-Regularisierung ohnehin gegensteuern.
